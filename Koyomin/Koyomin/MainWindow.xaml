@@ -1,0 +1,92 @@
+﻿<Window x:Class="Koyomin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avalon="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:local="clr-namespace:Koyomin"
+        mc:Ignorable="d"
+        Title="Koyomin" Height="621.365" Width="784.486" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Menu>
+                <MenuItem Header="File">
+                    <MenuItem x:Name="SaveProject" Header="Save Project" Click="SaveProject_Click"/>
+                    <MenuItem x:Name="AppClose" Header="Exit" Click="AppClose_Click" />
+                </MenuItem>
+                <MenuItem Header="Edit">
+                    <MenuItem x:Name="CutBtn" Header="Cut" Click="CutBtn_Click"/>
+                    <MenuItem x:Name="CopyBtn" Header="Copy" Click="CopyBtn_Click"/>
+                    <MenuItem x:Name="PasteBtn" Header="Paste" Click="PasteBtn_Click"/>
+                    <!--<MenuItem x:Name="DeleteBtn" Header="Delete"/>-->
+                    <!--<MenuItem x:Name="AllBtn" Header="Select All"/>-->
+                    <!--<MenuItem x:Name="SearchBtn" Header="Search"/>-->
+                </MenuItem>
+                <MenuItem Header="Project">
+                    <MenuItem x:Name="NewItem" Header="Add New Item" Click="NewItem_Click">
+
+                    </MenuItem>
+                    <MenuItem Header="Project Setting">
+
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem x:Name="RunBtn" Header="Run" Click="RunBtn_Click"/>
+                <MenuItem Header="Help">
+                    <MenuItem x:Name="WebBtn" Header="OfficialSite" Click="WebBtn_Click"/>
+                </MenuItem>
+
+
+
+
+            </Menu>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="345*"/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Center"/>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="274*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="284*"/>
+                </Grid.RowDefinitions>
+                <GridSplitter Grid.Row="1" Height="3" />
+                <Grid Grid.Row="0">
+                    <TreeView x:Name="ProjectItemView" SelectedItemChanged="ProjectItemView_SelectedItemChanged">
+
+                    </TreeView>
+                </Grid>
+                <Grid Grid.Row="2">
+
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="169.2"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="0,0,0.2,98.2" Grid.RowSpan="2">
+                    <TabControl x:Name="Tab1">
+
+                    </TabControl>
+                </Grid>
+                <Grid Grid.Row="1" Margin="0,0.4,0.2,0.2">
+                    <TextBox VerticalScrollBarVisibility="Visible" Name="ErAndMsgBox"/>
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Window>
