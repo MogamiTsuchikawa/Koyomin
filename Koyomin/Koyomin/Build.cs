@@ -221,7 +221,7 @@ namespace Koyomin
             //ウィンドウを表示しないようにする
             p.StartInfo.CreateNoWindow = true;
             //コマンドラインを指定（"/c"は実行後閉じるために必要）
-            p.StartInfo.Arguments = @"/c cd /d" + Hensu.ProjectPath + @"\build" + @"&& C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /clp:ErrorsOnly";
+            p.StartInfo.Arguments = @"/c cd /d" + Hensu.ProjectPath + @"\build" + @"& & C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /clp:ErrorsOnly";
 
             //起動
             p.Start();
