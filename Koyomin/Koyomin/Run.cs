@@ -57,7 +57,10 @@ namespace Koyomin
                 case "WPF":
                     Build.wpfbuild(checkUsing.loadUsing());
                     Msg = Build.MSbuild();
-                    System.Diagnostics.Process p1 = System.Diagnostics.Process.Start(path + @"\Build\main.exe");
+                    if (System.IO.File.Exists(path + @"\Build\main.exe"))
+                    {
+                        System.Diagnostics.Process p1 = System.Diagnostics.Process.Start(path + @"\Build\main.exe");
+                    }
                     break;
             }
             return Msg;
